@@ -1,5 +1,5 @@
 # Corel Aftershot Pro 3 DNG bug
-Reproducible example showing a bug within Corel Afetshot Pro 3 when working with DNG files
+Reproducible example showing a bug within Corel Aftershot Pro 3 when working with DNG files
 
 # Introduction
 
