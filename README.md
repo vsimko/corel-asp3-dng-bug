@@ -52,17 +52,22 @@ AfterShot3X64
 
 # Running Aftershot
 In the first dialog, click OK.
+
 ![Dialog 1](aftershot-dialog1.png)
 
 In the second dialog, click "Try Corel AfterShot Pro 3".
+
 ![Dialog 2](aftershot-dialog2.png)
 
 We can now navigate to the downloaded PEF and DNG files inside the "File System" tab.
+
 ![LensId in PEF](app-findfiles.png)
 
 Now, we open the PEF image "RAW_PENTAX_K10D_SRGB.PEF" and go to the "Lens Correction" tab.
 Here, we can see that Aftershot correctly identified the lens as "smc PENTAX-F 35-105mm f/4-5.6 or Sigma"
+
 ![LensId in PEF](app-lens-in-pef.png)
 
 If we do the same with the DNG version "RAW_PENTAX_K10D_SRGB.DNG", we can see that Aftershot did not correctly identify the lens.
+
 ![LensId in DNG](app-lens-in-dng.png)
