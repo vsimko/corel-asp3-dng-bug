@@ -11,6 +11,8 @@ The steps involve:
 - downloading sample DNG and PEF files from the same camera
 - running Aftershot
 
+Realted GIST describing the problem in detail: https://gist.github.com/vsimko/57714a842a3785ce1a2c3e91471dd213
+
 # Prerequisites (inside the host machine)
 - **VirtualBox** installed (tested with VirtualBox 5.1)
 - **Vagrant** installed (tested with vagrant 1.9.1)
