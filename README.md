@@ -76,7 +76,7 @@ If we do the same with the DNG version "SAMPLE-PENTAX.DNG", we can see that Afte
 ![LensId in DNG](app-lens-in-dng.png)
 
 
-# Using exiftool to browser EXIF data from the images
+# Using exiftool to browse EXIF data from the images
 
 ```sh
 # first, we need to install exiftool into our VM
