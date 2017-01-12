@@ -43,8 +43,8 @@ sudo gdebi --non-interactive AfterShotPro3.deb
 sudo apt-get install libxslt1.1
 
 # now, we download the sample DNG and PEF files to demonstrate the bug
-wget http://www.rawsamples.ch/raws/pentax/k10d/RAW_PENTAX_K10D_SRGB.DNG
-wget http://www.rawsamples.ch/raws/pentax/k10d/RAW_PENTAX_K10D_SRGB.PEF
+wget https://github.com/vsimko/corel-asp3-dng-bug/raw/master/SAMPLE-PENTAX.DNG
+wget https://github.com/vsimko/corel-asp3-dng-bug/raw/master/SAMPLE-PENTAX.PEF
 
 # finally, we can run Aftershot
 AfterShot3X64
@@ -66,12 +66,12 @@ We can now navigate to the downloaded PEF and DNG files inside the "File System"
 
 ![LensId in PEF](app-findfiles.png)
 
-Now, we open the PEF image "RAW_PENTAX_K10D_SRGB.PEF" and go to the "Lens Correction" tab.
-Here, we can see that Aftershot correctly identified the lens as "smc PENTAX-F 35-105mm f/4-5.6 or Sigma"
+Now, we open the PEF image "SAMPLE-PENTAX.PEF" and go to the "Lens Correction" tab.
+Here, we can see that Aftershot correctly identified the lens as "smc PENTAX-DA 18-135mm f/3.5-5.6 ED AL [IF] DC WR"
 
 ![LensId in PEF](app-lens-in-pef.png)
 
-If we do the same with the DNG version "RAW_PENTAX_K10D_SRGB.DNG", we can see that Aftershot did not correctly identify the lens.
+If we do the same with the DNG version "SAMPLE-PENTAX.DNG", we can see that Aftershot did not correctly identify the lens.
 
 ![LensId in DNG](app-lens-in-dng.png)
 
@@ -83,18 +83,17 @@ If we do the same with the DNG version "RAW_PENTAX_K10D_SRGB.DNG", we can see th
 sudo apt-get install exiftool
 ```
 
+Now we can list all metadata containing "lens" string (first PEF, second DNG)
 ```sh
-ubuntu@ubuntu-xenial:~$ exiftool RAW_PENTAX_K10D_SRGB.DNG|grep -i lens
-Lens Type                       : smc PENTAX-DA 18-55mm F3.5-5.6 AL
-Lens F Stops                    : 5
+ubuntu@ubuntu-xenial:~$ exiftool SAMPLE-PENTAX.PEF|grep -i lens
+Lens Type                       : smc PENTAX-DA 18-135mm F3.5-5.6 ED AL [IF] DC WR
 Lens Focal Length               : 18.1 mm
-Lens ID                         : smc PENTAX-DA 18-55mm F3.5-5.6 AL
+Lens ID                         : smc PENTAX-DA 18-135mm F3.5-5.6 ED AL [IF] DC WR
 ```
 
 ```sh
-ubuntu@ubuntu-xenial:~$ exiftool RAW_PENTAX_K10D_SRGB.PEF|grep -i lens
-Lens Type                       : smc PENTAX-F 35-105mm F4-5.6 or Sigma or Tokina Lens
-Lens F Stops                    : 8.5
-Lens Focal Length               : 107.5 mm
-Lens ID                         : Sigma AF 28-300mm F3.5-6.3 DL IF or Sigma AF 28-300mm F3.5-6.3 DG IF Macro
+ubuntu@ubuntu-xenial:~$ exiftool SAMPLE-PENTAX.DNG|grep -i lens
+Lens Type                       : smc PENTAX-DA 18-135mm F3.5-5.6 ED AL [IF] DC WR
+Lens Focal Length               : 40.0 mm
+Lens ID                         : smc PENTAX-DA 18-135mm F3.5-5.6 ED AL [IF] DC WR
 ```
