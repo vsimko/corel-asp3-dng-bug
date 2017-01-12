@@ -50,6 +50,9 @@ wget http://www.rawsamples.ch/raws/pentax/k10d/RAW_PENTAX_K10D_SRGB.PEF
 AfterShot3X64
 ```
 
+You can also run Afterhost with super-user privileges as suggested by the Corel technical support.
+Just use `sudo AfterShot3X64`. However, the bug is still there even when running as root.
+
 # Running Aftershot
 In the first dialog, click OK.
 
