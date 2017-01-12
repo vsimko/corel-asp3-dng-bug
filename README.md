@@ -74,3 +74,27 @@ Here, we can see that Aftershot correctly identified the lens as "smc PENTAX-F 3
 If we do the same with the DNG version "RAW_PENTAX_K10D_SRGB.DNG", we can see that Aftershot did not correctly identify the lens.
 
 ![LensId in DNG](app-lens-in-dng.png)
+
+
+# Using exiftool to browser EXIF data from the images
+
+```sh
+# first, we need to install exiftool into our VM
+sudo apt-get install exiftool
+```
+
+```sh
+ubuntu@ubuntu-xenial:~$ exiftool RAW_PENTAX_K10D_SRGB.DNG|grep -i lens
+Lens Type                       : smc PENTAX-DA 18-55mm F3.5-5.6 AL
+Lens F Stops                    : 5
+Lens Focal Length               : 18.1 mm
+Lens ID                         : smc PENTAX-DA 18-55mm F3.5-5.6 AL
+```
+
+```sh
+ubuntu@ubuntu-xenial:~$ exiftool RAW_PENTAX_K10D_SRGB.PEF|grep -i lens
+Lens Type                       : smc PENTAX-F 35-105mm F4-5.6 or Sigma or Tokina Lens
+Lens F Stops                    : 8.5
+Lens Focal Length               : 107.5 mm
+Lens ID                         : Sigma AF 28-300mm F3.5-6.3 DL IF or Sigma AF 28-300mm F3.5-6.3 DG IF Macro
+```
