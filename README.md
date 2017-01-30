@@ -1,6 +1,11 @@
 # Corel Aftershot Pro 3 DNG bug
 Reproducible example showing a bug within Corel Aftershot Pro 3 when working with DNG files
 
+**UPDATE (2017-01-30):** It seems that Aftershot Pro 3 and 2 contain another bug causing severe memory leaks when generating previews for imported DNG files. On a machine with 32 GB RAM, the memory is exhausted after approx. 1000 previews.
+If swap is disabled, the application crashes. With swap enabled, the whole OS slows down tremendously.
+This only happens with DNG files and not with other raw formats (e.g PEF, ARW, CR2, ...) 
+
+
 # Introduction
 
 We are going to demonstrate the bug in a fresh linux box based on the latest Ubuntu 16.04 (Xenial) running inside a virtual machine.
